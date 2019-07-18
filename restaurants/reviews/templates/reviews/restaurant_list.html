@@ -1,0 +1,17 @@
+{% block content %}
+{% if latest_restaurant_list %}
+
+<div>
+    {% for restaurant in latest_restaurant_list %}
+    <div>
+        <h4><a href="{% url 'reviews:restaurant_detail' restaurant.id %}">
+        {{ review.restaurant.name }}
+        </a></h4>
+
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No reviews are available.</p>
+{% endif %}
+{% endblock %}
